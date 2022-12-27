@@ -79,9 +79,9 @@ maintab:Button('Auto Stack V3', function()
 end)
 
 
--- maintab:Button('Auto Medic V2', function()
---     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Auto%20medic%20V2",true))()
--- end)
+maintab:Button('Auto Medic V2', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Auto%20medic%20V2",true))()
+end)
 
 
 maintab:Button('Place Anywhere', function()
