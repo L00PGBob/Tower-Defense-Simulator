@@ -109,10 +109,6 @@ maintab:Button('DJ Music GUI', function()
 end)
 
 
-maintab:Button('FreeCam (ShiftP)', function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/K1NG000/Test/main/Free%20Cam",true))()
-end)
-
 
 
 
@@ -185,7 +181,13 @@ otherstab:Toggle('Commander', function(bool)
 end)
 
 
+
 otherstab:Label('                                ━━━━━━  Looks ━━━━━━')
+
+otherstab:Button('FreeCam (ShiftP)', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/K1NG000/Test/main/Free%20Cam",true))()
+end)
+
 
 otherstab:Button('Save GPU', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator-3/main/save%20gpu",true))()
