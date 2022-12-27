@@ -59,17 +59,16 @@ local uitab = win:Tab('UI')
 ----------------------------------------------------------------------------------------------------------------------
 maintab:Label('                                 ━━━━━━ Main ━━━━━━')
 
+maintab:Button('Skip (E)', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator-3/main/To%20skip%20press%20E",true))()
+end)
+
 maintab:Toggle('AutoSkip', function(bool)
     getgenv().autoSkip = bool
     print('Auto Skip is: ', bool)
     if bool then
         doSkip();
     end
-end)
-
-
-maintab:Button('Skip (E)', function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator-3/main/To%20skip%20press%20E",true))()
 end)
 
 
@@ -80,7 +79,7 @@ end)
 
 
 maintab:Button('Auto Medic V2', function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Auto%20medic%20V2",true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TacoCatBackWardsIsTacoCat/scripts/main/Auto%20Medic%20Ability.lua",true))()
 end)
 
 
@@ -91,6 +90,11 @@ end)
 
 maintab:Button('Auto Chain', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/K1NG000/Test/main/AutoChain",true))()
+end)
+
+
+maintab:Button('SellFarms - FinalWave', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator-3/main/Sell%20farms%20last%20round",true))()
 end)
 
 
@@ -181,11 +185,11 @@ otherstab:Toggle('Commander', function(bool)
 end)
 
 
+otherstab:Label('                                ━━━━━━  Looks ━━━━━━')
+
 otherstab:Button('Save GPU', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator-3/main/save%20gpu",true))()
 end)
-
-otherstab:Label('                                ━━━━━━  Looks ━━━━━━')
 
 otherstab:Button('RTX', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/RTX%20for%20TDS",true))()
