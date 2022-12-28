@@ -133,7 +133,7 @@ function Library:Create(table)
         holder.BackgroundTransparency = 1
         holder.BorderColor3 = Color3.fromRGB(33, 33, 33)
         holder.Position = UDim2.fromScale(0.0022, 0.00404)
-        holder.Size = UDim2.fromOffset(452, 370)
+        holder.Size = UDim2.fromOffset(452, 272)
 
         local uIPadding1 = Instance.new("UIPadding")
         uIPadding1.Name = "uIPadding1"
