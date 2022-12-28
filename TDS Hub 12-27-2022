@@ -47,9 +47,9 @@ local win = BlekLib:Create({
 
 local maintab = win:Tab('Main          ')
 local lobbytab = win:Tab('Lobby          ')
-local otherstab = win:Tab('Other          ')
-local localtab = win:Tab('Local          ')
-local credittab = win:Tab('Credits          ')
+local abilitytab = win:Tab('Ability         ')
+local localtab = win:Tab('Script          ')
+local credittab = win:Tab('Credits         ' )
 local uitab = win:Tab('UI')
 
 
@@ -57,11 +57,9 @@ local uitab = win:Tab('UI')
 
 
 ----------------------------------------------------------------------------------------------------------------------
-maintab:Label('                                 ━━━━━━ Main ━━━━━━')
+-- maintab:Label('                                 ━━━━━━ Main ━━━━━━')
 
-maintab:Button('Skip (E)', function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator-3/main/To%20skip%20press%20E",true))()
-end)
+
 
 maintab:Toggle('AutoSkip', function(bool)
     getgenv().autoSkip = bool
@@ -71,25 +69,27 @@ maintab:Toggle('AutoSkip', function(bool)
     end
 end)
 
+maintab:Button('Toggleable AutoSkip', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator/main/Toggleable%20AutoSkip",true))()
+end)
 
+maintab:Button('Auto Chain', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/K1NG000/Test/main/AutoChain",true))()
+end)
 
-maintab:Button('Auto Stack V3', function()
+maintab:Button('AutoStack V3', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Auto%20Stack",true))()
 end)
 
 
-maintab:Button('Auto Medic V2', function()
+maintab:Button('AutoMedic V2', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/TacoCatBackWardsIsTacoCat/scripts/main/Auto%20Medic%20Ability.lua",true))()
 end)
 
 
+
 maintab:Button('Place Anywhere', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Place%20Anywhere",true))()
-end)
-
-
-maintab:Button('Auto Chain', function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/K1NG000/Test/main/AutoChain",true))()
 end)
 
 
@@ -104,9 +104,7 @@ end)
 
 
 
-maintab:Button('DJ Music GUI', function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/TacoCatBackWardsIsTacoCat/scripts/main/TDS%20DJ%20Music%20Gui.lua",true))()
-end)
+
 
 
 
@@ -115,9 +113,9 @@ end)
 
 
 ----------------------------------------------------------------------------------------------------------------------
-lobbytab:Label('                                 ━━━━━━ Scripts ━━━━━━')
+-- lobbytab:Label('                                 ━━━━━━ Scripts ━━━━━━')
 
-lobbytab:Button('Join LowPop', function()
+lobbytab:Button('Join LowPop Server', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/join%20less%20server",true))()
 end)
 
@@ -125,44 +123,44 @@ end)
 -- lobbytab:Label('                                 ━━━━━━ Crates ━━━━━━')
 
 
-lobbytab:Button('✨ Buy Basic', function()
+lobbytab:Button('✨ Buy Basic 📦', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/buy%20basic",true))()
 end)
 
 
 
-lobbytab:Button('⭐ Buy Golden', function()
+lobbytab:Button('⭐ Buy Golden 📦', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/buy%20golden",true))()
 end)
 
 
 
-lobbytab:Button('🌟 Buy Premium', function()
+lobbytab:Button('🌟 Buy Premium 📦', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/buy%20premium",true))()
 end)
 
 
 
-lobbytab:Button('🌠 Buy Deluxe', function()
+lobbytab:Button('🌠 Buy Deluxe 📦', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/buy%20deluxe",true))()
 end)
 
 
 
 
-lobbytab:Button('Open Basic', function()
+lobbytab:Button('Open Basic 📦', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/open%20basic",true))()
 end)
 
-lobbytab:Button('Open Golden', function()
+lobbytab:Button('Open Golden 📦 ', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/open%20golden",true))()
 end)
 
-lobbytab:Button('Open Premium', function()
+lobbytab:Button('Open Premium 📦 ', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/open%20premium",true))()
 end)
 
-lobbytab:Button('Open Deluxe', function()
+lobbytab:Button('Open Deluxe 📦 ', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/open%20deluxe",true))()
 end)
 
@@ -170,9 +168,9 @@ end)
 
 
 ----------------------------------------------------------------------------------------------------------------------
---otherstab:Label('                             ━━━━━━ Auto Ability ━━━━━━')
+--abilitytab:Label('                             ━━━━━━ Auto Ability ━━━━━━')
 
-otherstab:Toggle('Commander', function(bool)
+abilitytab:Toggle('Commander', function(bool)
     getgenv().Commander = bool
     print('Auto Commander is: ', bool)
     if bool then
@@ -182,37 +180,36 @@ end)
 
 
 
-otherstab:Label('                                ━━━━━━  Looks ━━━━━━')
+abilitytab:Label('                                ━━━━━━  Other ━━━━━━')
 
-otherstab:Button('FreeCam (ShiftP)', function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/K1NG000/Test/main/Free%20Cam",true))()
-end)
-
-
-otherstab:Button('Save GPU', function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator-3/main/save%20gpu",true))()
-end)
-
-otherstab:Button('RTX', function()
+abilitytab:Button('RTX', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/RTX%20for%20TDS",true))()
 end)
 
 
 
-otherstab:Button('Shader', function()
+abilitytab:Button('Shader', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Shader",true))()
 end)
 
 
 
-otherstab:Button('Anime Sky', function()
+abilitytab:Button('Anime Sky', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/anime%20sky",true))()
 end)
 
+abilitytab:Button('FreeCam (ShiftP)', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/K1NG000/Test/main/Free%20Cam",true))()
+end)
 
-otherstab:Button('SuperLOW GFX', function()
+abilitytab:Button('Save GPU', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator-3/main/save%20gpu",true))()
+end)
+
+abilitytab:Button('SuperLOW GFX', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Super%20Low%20GFX",true))()
 end)
+
 
 
 ----------------------------------------------------------------------------------------------------------------------
@@ -220,19 +217,34 @@ localtab:Button('Noclip (T)', function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/HoldTNoclip",true))()
 end)
 
+localtab:Button('DJ Music GUI', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TacoCatBackWardsIsTacoCat/scripts/main/TDS%20DJ%20Music%20Gui.lua",true))()
+end)
+
+localtab:Label('Click In Lobby n Match (Not AutoFarm, Just Strat)')
+localtab:Label('Join Discord For The Strat To AutoFarm (https://discord.gg/mmdev)')
+
+localtab:Button('AceP / Freezer / MiliBase -- 244G/H', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator/main/244%20Gem%20Farm",true))()
+end)
+
+localtab:Button('Cowboy / Commander / MiniG / AceP / DJ -- 3200C/H', function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator/main/3200%20Coin%20Grind",true))()
+end)
 
 ----------------------------------------------------------------------------------------------------------------------
 credittab:Label('🌟 MoneyMaker')
 credittab:Label('🌟 Made By LOOP')
 credittab:Label('❤️️ Big Credit to MintTea#9260')
+credittab:Label('💙 Gradymeister#3270')
 credittab:Label('💙 ! phil#9999 / special ed kid')
 credittab:Label('💙 RoboCop#8899')
 credittab:Label('💙 abunda77#2455')
 credittab:Label('💙 Aidez (v3rm)')
+credittab:Label('💙 Delectiv#1857')
 
 
 ----------------------------------------------------------------------------------------------------------------------
 uitab:Button('Destroy GUI', function()
     win:Exit()
 end)
-
