@@ -26,7 +26,7 @@ function Library:Create(table)
     main.Name = "main"
     main.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
     main.Position = UDim2.fromScale(0.244, 0.292)
-    main.Size = UDim2.fromOffset(490, 412)
+    main.Size = UDim2.fromOffset(488, 299)
 
     local title = Instance.new("TextLabel")
     title.Name = "title"
@@ -116,7 +116,7 @@ function Library:Create(table)
         container.Name = "container"
         container.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
         container.Position = UDim2.fromScale(0.0342, 0.31)
-        container.Size = UDim2.fromOffset(472, 174)
+        container.Size = UDim2.fromOffset(472, 183)
         
         local uICorner2 = Instance.new("UICorner")
         uICorner2.Name = "uICorner2"
@@ -133,7 +133,7 @@ function Library:Create(table)
         holder.BackgroundTransparency = 1
         holder.BorderColor3 = Color3.fromRGB(33, 33, 33)
         holder.Position = UDim2.fromScale(0.0022, 0.00404)
-        holder.Size = UDim2.fromOffset(472, 174)
+        holder.Size = UDim2.fromOffset(472, 182)
 
         local uIPadding1 = Instance.new("UIPadding")
         uIPadding1.Name = "uIPadding1"
