@@ -1,0 +1,3 @@
+local RS = game:GetService('ReplicatedStorage'); local rF = RS:WaitForChild('RemoteFunction'); local aSP = RS:WaitForChild("State"):WaitForChild("Voting"):WaitForChild("Enabled"); local aS = false
+local UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/dfhtyxvzexrxgfdzgzfdvfdz/main/jsdnfjdsfdjnsmvkjhlkslzLIB", true))(); local window = UI:CreateWindow('AutoSkip V2'); local toggle = window:Toggle('Auto Skip', {flag = "as", default = true}, function(v) aS = v end)
+aSP:GetPropertyChangedSignal("Value"):Connect(function() if aS and aSP.Value then wait(.15) rF:InvokeServer('Waves', 'Skip') end end)
