@@ -1,0 +1,374 @@
+getgenv().autoSkip = false; -- true/false
+
+getgenv().Commander = false
+getgenv().Swarmer = false
+getgenv().Gladiator = false
+getgenv().Medic = false
+
+
+
+
+
+function doSkip()
+    local RS = game:GetService('ReplicatedStorage'); local rF = RS:WaitForChild('RemoteFunction'); local aSP = RS:WaitForChild("State"):WaitForChild("Voting"):WaitForChild("Enabled"); local aS = true
+    aSP:GetPropertyChangedSignal("Value"):Connect(function() if aS and aSP.Value then wait(.15) rF:InvokeServer('Waves', 'Skip') end end)
+end
+
+function doCAbility()
+    spawn(function()
+        while Commander == true do
+            local args = {[1] = "Troops",[2] = "Abilities",[2] = "Activate",[4] = {["Name"] = "Call Of Arms",["Troop"] = workspace.Towers.Red}}
+            game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+        wait(0.2)
+        end
+    end)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+
+
+local Window = Rayfield:CreateWindow({
+	Name = "Tower Defense Simulator | @GenericBob#6126",
+	LoadingTitle = "TDS Hub | @GenericBob#6126 ",
+	LoadingSubtitle = "by Loop / GenericBob",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = TDSHub, -- Create a custom folder for your hub/game
+		FileName = "Cfg"
+	},
+        Discord = {
+        	Enabled = true,
+        	Invite = "https://discord.gg/WuTDgwhEYn", -- The Discord invite code, do not include discord.gg/
+        	RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+        },
+	KeySystem = true, -- Set this to true to use our key system
+	KeySettings = {
+		Title = "TDS Bub",
+		Subtitle = "Key System",
+		Note = "Key = ILoveLoop",
+		FileName = "Loop Key",
+		SaveKey = true,
+		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+		Key = "ILoveLoop"
+	}
+})
+
+
+
+
+
+local Tab = Window:CreateTab("Main" ) -- Title, Image
+local Tab1 = Window:CreateTab("Other" ) -- Title, Image
+local Tab4 = Window:CreateTab("Strats") -- Title, Image
+local Tab2 = Window:CreateTab("Lobby" ) -- Title, Image
+local Tab5 = Window:CreateTab("Settings" ) -- Title, Image
+local Tab3 = Window:CreateTab("Credits" ) -- Title, Image
+
+
+local Section = Tab:CreateSection("General")
+
+local Section2 = Tab1:CreateSection("General")
+
+local Section3 = Tab4:CreateSection("Strats")
+
+local Section5 = Tab2:CreateSection("General")
+
+local Section6 = Tab3:CreateSection("Credits")
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+local Toggle = Tab:CreateToggle({
+	Name = "AutoSkip",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(bool)
+        getgenv().autoSkip = bool
+        if bool then
+            doSkip();
+	end
+end
+})
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+local Label = Tab:CreateLabel("Place 3 Lvl 2 Commanders then Use Chain")
+
+local Button = Tab:CreateButton({
+	Name = "Auto Commander Chain",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Auto%20Stack",true))()
+	end,
+})
+
+
+
+
+local Button = Tab:CreateButton({
+	Name = "Stack v3",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Auto%20Stack",true))()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Medic v2",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TacoCatBackWardsIsTacoCat/scripts/main/Auto%20Medic%20Ability.lua",true))()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Place-Anywhere",
+	Callback = function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Place%20Anywhere",true))()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "SellFarms-LastWave",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator-3/main/Sell%20farms%20last%20round",true))()
+	end,
+})
+
+local Button = Tab:CreateButton({
+	Name = "Auto Pickup Candy Canes",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/CandyCanev2",true))()
+	end,
+})
+-------------------------------------------------------------------------------------------------------------------------
+
+local Label = Tab1:CreateLabel("Auto Ability")
+
+local Toggle = Tab1:CreateToggle({
+	Name = "Commander",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(bool)
+        getgenv().Commander = bool
+        if bool then
+            doCAbility();
+	end
+end
+})
+
+
+local Label = Tab1:CreateLabel("Scripts")
+
+
+local Button = Tab1:CreateButton({
+	Name = "Noclip (T)",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/HoldTNoclip",true))()
+	end
+})
+
+local Button = Tab1:CreateButton({
+	Name = "FreeCam (ShiftP)",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/K1NG000/Test/main/Free%20Cam",true))()
+	end
+})
+
+local Label = Tab1:CreateLabel("Looks")
+
+local Button = Tab1:CreateButton({
+	Name = "RTX",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/RTX%20for%20TDS",true))()
+	end
+})
+
+local Button = Tab1:CreateButton({
+	Name = "Shaders",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Shader",true))()
+	end
+})
+
+local Button = Tab1:CreateButton({
+	Name = "Make Game Look Clearer / Anime Sky",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/anime%20sky",true))()
+	end
+})
+
+local Label = Tab1:CreateLabel("Looks For AutoFarming")
+
+local Button = Tab1:CreateButton({
+	Name = "Save CPU / White Screen",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator-3/main/save%20gpu",true))()
+	end
+})
+
+local Button = Tab1:CreateButton({
+	Name = "Super Low GFX / No Textures",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/Super%20Low%20GFX",true))()
+	end
+})
+
+-------------------------------------------------------------------------------------------------------------------------
+local Label = Tab4:CreateLabel("Click In Lobby n Match (Not AutoFarm, Just Strat)")
+local Label = Tab4:CreateLabel("Join Discord For The Strat To AutoFarm (https://discord.gg/mmdev)")
+
+local Button = Tab4:CreateButton({
+	Name = "AceP / Freezer / MiliBase -- 244G/H",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator/main/244%20Gem%20Farm",true))()
+	end
+})
+
+local Button = Tab4:CreateButton({
+	Name = "Cowboy / Commander / MiniG / AceP / DJ -- 3200C/H",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Tower-Defense-Simulator/main/3200%20Coin%20Grind",true))()
+	end
+})
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------
+local Label = Tab2:CreateLabel("Scripts")
+
+local Button = Tab2:CreateButton({
+	Name = "Join LowPop Server",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/join%20less%20server",true))()
+	end
+})
+
+local Label = Tab2:CreateLabel("Buy Crates")
+
+
+local Button = Tab2:CreateButton({
+	Name = "✨ Buy Basic 📦",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/buy%20basic",true))()
+	end
+})
+
+local Button = Tab2:CreateButton({
+	Name = "⭐ Buy Golden 📦",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/buy%20golden",true))()
+	end
+})
+
+local Button = Tab2:CreateButton({
+	Name = "🌟 Buy Premium 📦",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/buy%20premium",true))()
+	end
+})
+
+local Button = Tab2:CreateButton({
+	Name = "🌠 Buy Deluxe 📦",
+	Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L00PGBob/Test/main/buy%20deluxe",true))()
+	end
+})
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+local Label = Tab3:CreateLabel("🌟 MoneyMaker")
+local Label = Tab3:CreateLabel("🌟 Made By Loop / GenericBob")
+local Label = Tab3:CreateLabel("❤️️ Big Credit to MintTea#9260")
+local Label = Tab3:CreateLabel("💙 Gradymeister#3270")
+local Label = Tab3:CreateLabel("💙 ! phil#9999 / special ed kid")
+local Label = Tab3:CreateLabel("💙 RoboCop#8899")
+local Label = Tab3:CreateLabel("💙 abunda77#2455")
+local Label = Tab3:CreateLabel("💙 Aidez (v3rm)")
+local Label = Tab3:CreateLabel("💙 Delectiv#1857")
+
+
+-------------------------------------------------------------------------------------------------------------------------
+local Label = Tab5:CreateLabel("Right Shift = Close Gui")
+
+local Button = Tab5:CreateButton({
+	Name = "Destroy UI",
+	Callback = function()
+        Rayfield:Destroy()
+	end
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rayfield:LoadConfiguration()
